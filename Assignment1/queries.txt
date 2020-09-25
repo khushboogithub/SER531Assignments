@@ -1,0 +1,19 @@
+﻿Xpath Queries : 
+1. Find all movies that have been nominated for both Academy and Golden Globe awards.
+/moviesList/movie[goldenglobeawards and academyawards]
+
+
+2. Find all directors that won the Academy award since 2015.
+/moviesList/movie[academyawards>2015]/director
+
+
+3. Find all movies from “Drama” genre with a rating of 7.5 or greater.
+/moviesList/movie[genre="Drama" and rating>=7.5]
+
+
+4. Find all movies playing in Phoenix directed by “XYZ”.
+/moviesList/movie[playingTimes/location="Phoenix" and director="James Cameron"]
+
+
+5. Find all movies with actor “ABC” and from “Comedy” genre.
+/moviesList/movie[actors/actor="Jennifer Laurance" and genre="Comedy"]

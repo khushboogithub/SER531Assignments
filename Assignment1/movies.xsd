@@ -1,0 +1,56 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/movies" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="moviesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="movie" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="title"/>
+              <xs:element name="actors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="actor" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="director"/>
+              <xs:element type="xs:string" name="genre"/>
+              <xs:element type="xs:short" name="academyawards" minOccurs="0"/>
+              <xs:element type="xs:short" name="goldenglobeawards" minOccurs="0"/>
+              <xs:element name="playingTimes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="location"/>
+                    <xs:element type="xs:string" name="time"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:float" name="rating"/>
+              <xs:element type="xs:string" name="reviews"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="userProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element name="moviePreferences">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="movie" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
